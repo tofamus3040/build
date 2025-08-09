@@ -1,0 +1,14 @@
+name: Build_rk322x_kernel                                                                                                                                                          
+on:                                                                                                                                                                                           
+  workflow_dispatch:                                                                                                                                                                          
+jobs:                                                                                                                                                                                         
+  build-armbian:                                                                                                                                                                              
+    runs-on: ubuntu-22.04-arm                                                                                                                                                                    
+    steps:                                                                                                                                                                                    
+      - uses: tofamus3040/build@main                                                                                                                                                              
+        with:                                                                                                                                                                                 
+          armbian_token: "${{ secrets.GITHUB_TOKEN }}"  # GitHub token                                                                                                                        
+          armbian_release: "noble"                        # userspace                                                                                                                      
+          armbian_target: "kernel"                        # build=image, kernel=kernel                                                                                                         
+          armbian_board: "rk322x-box"                   # build target                                                                                                                     
+          armbian_ui: "server"     
