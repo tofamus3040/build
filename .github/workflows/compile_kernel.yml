@@ -69,8 +69,8 @@ jobs:
         run: |
           df -hT ${PWD}
           mkdir -p /builder/{kernel,output}
-          ln -sf /builder/kernel /home/runner/work/_actions/tofamus3040/build/main/compile-kernel/kernel
-          ln -sf /builder/output /home/runner/work/_actions/tofamus3040/build/main/compile-kernel/output
+          ln -sf /builder/kernel /home/runner/work/_actions/tofamus3040/build/main
+          ln -sf /builder/output /home/runner/work/_actions/tofamus3040/build/main
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile the kernel [ ${{ inputs.kernel_version }} ]
